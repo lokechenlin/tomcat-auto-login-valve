@@ -14,14 +14,12 @@ For this valve to kick in you need to add the following to your server.xml,
 either under the Context or Host elements for where you want it to take effect.
 the jar file needs to live in your tomcat/lib directory
 
-<!--
-<Valve className="org.apache.catalina.valves.AutoLoginValve" 
+&lt;Valve className="org.apache.catalina.valves.AutoLoginValve" 
 	   trustedIpAddresseses="<comma separated value of trusted ip addresses>"
    	   username="<username>"
    	   password="<password for username>"
 	   role="<role for username>"
-	   debug="<true or false>"/>
--->
+	   debug="true or false"/>
 
 The trustedIpAddresseses only needs to be the start of the address if you want to allow all addresses in that range,
 eg. If you trust all addresses that begin with 192.168.1 then you only need to set trustedIpAddresseses to "192.168.1"
@@ -48,8 +46,8 @@ sudo cp auto-login-valve.jar /opt/apache-tomcat-7.0.56/lib/<br>
 
 v) Edit the server.xml<br>
 sudo vi /opt/apache-tomcat-7.0.56/conf/server.xml<br>
-	# Add under <host><br>
-	<Valve className="org.apache.catalina.valves.AutoLoginValve" trustedIpAddresses="xx.xx.xx" username="xxx" password="xxx" role="xxx" debug="true" />
+	# Add under &lt;host><br>
+	&lt;Valve className="org.apache.catalina.valves.AutoLoginValve" trustedIpAddresses="xx.xx.xx" username="xxx" password="xxx" role="xxx" debug="true" />
 
 vi) Restart server<br>
 sudo /etc/init.d/tomcat restart<br>
