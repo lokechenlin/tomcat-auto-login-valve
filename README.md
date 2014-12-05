@@ -28,8 +28,9 @@ How to use? Example
 ===================
 
 i) Get the source
-wget https://github.com/xxx.tar.gz
-tar -vxf TomcatAutoLoginValve-1.1
+wget https://github.com/lokechenlin/tomcat-auto-login-valve/archive/1.0.0.tar.gz 
+tar -vxf 1.0.0.tar.gz
+mv 1.0.0 TomcatAutoLoginValve
 
 ii) Compile the source code
 cd TomcatAutoLoginValve/
