@@ -30,26 +30,26 @@ How to use? Example
 ===================
 
 i) Get the source
-wget https://github.com/lokechenlin/tomcat-auto-login-valve/archive/1.0.0.tar.gz 
-tar -vxf 1.0.0.tar.gz
-mv 1.0.0 TomcatAutoLoginValve
+wget https://github.com/lokechenlin/tomcat-auto-login-valve/archive/1.0.0.tar.gz <br>
+tar -vxf 1.0.0.tar.gz<br>
+mv 1.0.0 TomcatAutoLoginValve<br>
 
 ii) Compile the source code
-cd TomcatAutoLoginValve/
-mkdir classes
-javac -classpath /opt/apache-tomcat-7.0.56/lib/catalina.jar:/opt/apache-tomcat-7.0.56/lib/servlet-api.jar -d classes src/main/java/org/apache/catalina/valves/AutoLoginValve.java
+cd TomcatAutoLoginValve/<br>
+mkdir classes<br>
+javac -classpath /opt/apache-tomcat-7.0.56/lib/catalina.jar:/opt/apache-tomcat-7.0.56/lib/servlet-api.jar -d classes<br> src/main/java/org/apache/catalina/valves/AutoLoginValve.java<br>
 
 iii) Compile the jar file
-cd classes
-jar -cvf auto-login-valve.jar org
+cd classes<br>
+jar -cvf auto-login-valve.jar org<br>
 
 iv) Move the file to tomcat/lib folder
-sudo cp auto-login-valve.jar /opt/apache-tomcat-7.0.56/lib/
+sudo cp auto-login-valve.jar /opt/apache-tomcat-7.0.56/lib/<br>
 
 v) Edit the server.xml
-sudo vi /opt/apache-tomcat-7.0.56/conf/server.xml
-	# Add under <host>
+sudo vi /opt/apache-tomcat-7.0.56/conf/server.xml<br>
+	# Add under <host><br>
 	<Valve className="org.apache.catalina.valves.AutoLoginValve" trustedIpAddresses="xx.xx.xx" username="xxx" password="xxx" role="xxx" debug="true" />
 
 vi) Restart server
-sudo /etc/init.d/tomcat restart
+sudo /etc/init.d/tomcat restart<br>
