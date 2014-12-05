@@ -14,13 +14,15 @@ For this valve to kick in you need to add the following to your server.xml,
 either under the Context or Host elements for where you want it to take effect.
 the jar file needs to live in your tomcat/lib directory
 
+<!--
 <Valve className="org.apache.catalina.valves.AutoLoginValve" 
 	   trustedIpAddresseses="<comma separated value of trusted ip addresses>"
    	   username="<username>"
    	   password="<password for username>"
 	   role="<role for username>"
 	   debug="<true or false>"/>
-	   
+-->
+
 The trustedIpAddresseses only needs to be the start of the address if you want to allow all addresses in that range,
 eg. If you trust all addresses that begin with 192.168.1 then you only need to set trustedIpAddresseses to "192.168.1"
 
